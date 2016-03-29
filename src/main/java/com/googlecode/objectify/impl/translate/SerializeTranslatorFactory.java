@@ -74,6 +74,7 @@ public class SerializeTranslatorFactory implements TranslatorFactory<Object, Blo
 					ObjectOutputStream oos = new ObjectOutputStream(out);
 					oos.writeObject(value);
 					oos.close();
+					deflater.end();
 
 					return new Blob(baos.toByteArray());
 
